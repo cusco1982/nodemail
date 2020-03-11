@@ -1,5 +1,5 @@
 {
-  "name": "nodemailer",
+  "name": "nodemail",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cusco1982/nodemailer.git"
+    "url": "git+https://github.com/cusco1982/nodemail.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cusco1982/nodemailer/issues"
+    "url": "https://github.com/cusco1982/nodemail/issues"
   },
-  "homepage": "https://github.com/cusco1982/nodemailer#readme"
+  "homepage": "https://github.com/cusco1982/nodemail#readme"
 }
