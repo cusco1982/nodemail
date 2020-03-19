@@ -1,8 +1,7 @@
-# Node Contact Form
+# Simple Nodemailer Contact form
 
 Simple Node.js/Express app using Nodemailer to send emails
 
-- Please add your own SMTP info for it to work
 
 ### Version
 
@@ -17,5 +16,5 @@ npm install
 ## Run
 
 ```bash
-node app
+npm start
 ```
