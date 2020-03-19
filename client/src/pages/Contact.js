@@ -8,7 +8,7 @@ class Contact extends Component {
         return (
 
 
-            <Form>
+            <Form style={{width:'600px'}}>
                 <FormGroup>
                     <Label for='name'>Name:</Label>
                     <Input
