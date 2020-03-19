@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Form, FormGroup, Input, Label, Button } from 'reactstrap'
 // import Jumbotron from "./components/Jumbotron";
 import NavBar from "./components/Nav";
 // import Books from "./pages/Books";
+import Contact from "./pages/Contact";
 
 
 
@@ -11,7 +13,7 @@ function App() {
     <Router>
       <div>
 
-        <NavBar/>
+        <NavBar />
 
         {/* <Jumbotron />
         <Switch>
@@ -20,8 +22,8 @@ function App() {
           />
           <Route exact path="/saved" component={Books}/>
         </Switch> */}
-        <div>hello123</div>
-        
+        <Route exact path="/" component={Contact}/>
+
       </div>
     </Router>
   )
