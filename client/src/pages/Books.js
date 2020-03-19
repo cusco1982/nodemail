@@ -82,7 +82,16 @@ class Books extends Component {
 
 
             <div>
-                {window.location.pathname === "/" ?
+                hello
+                
+
+
+
+
+
+
+                
+                {/* {window.location.pathname === "/" ?
                     <div>
                         <SearchCard
                             value={this.state.bookSearch}
@@ -132,7 +141,7 @@ class Books extends Component {
                                 <h3>No Saved Books</h3>
                             )}
                     </SaveCard>
-                }
+                } */}
             </div>
 
         )
