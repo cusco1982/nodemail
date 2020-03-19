@@ -4,11 +4,65 @@ import { Form, FormGroup, Input, Label, Button } from 'reactstrap'
 
 
 class Contact extends Component {
+
+
+    constructor() {
+        super()
+
+        this.state={
+            name:'',
+            email:'',
+            message:''
+        }
+
+        // this.handleChange = this.handleChange.bind(this)
+    }
+
+    // handleChange = e => {
+    //     this.setState({ [e.target.name]: e.target.value })
+    // }
+    handleSubmit = event => {
+        event.preventDefault();
+    
+        const { email, password } = this.state;
+        // axios({
+        //   url: "/authentication/signin",
+        //   method: 'POST',
+        //   data: {
+            // email,
+            // password
+        //   }
+        // })
+        //   .then(response => {
+            // console.log(response);
+            // const { email } = response.data;
+            // sessionStorage.setItem("user", JSON.stringify({ email }));
+            // if (email === "manager@gmail.com") {
+            //   this.props.history.push('/admin')
+            // } else {
+            //   this.props.history.push('/tenant')
+            // }
+        //   })
+        //   .catch((error) => {
+            // console.log(error)
+        //   }
+        //   );
+      }
+
+
+    handleChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value
+        });
+      };
+
+
     render() {
         return (
 
 
-            <Form style={{width:'600px'}}>
+            <Form onSubmit={this.handleSubmit} style={{width:'600px'}}>
                 <FormGroup>
                     <Label for='name'>Name:</Label>
                     <Input
@@ -33,7 +87,7 @@ class Contact extends Component {
                     onChange={this.handleChange}/>
                 </FormGroup>
 
-                <Button>Submit</Button>
+                <Button type="submit">Submit</Button>
             </Form>
 
 
