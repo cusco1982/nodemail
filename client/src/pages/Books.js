@@ -97,13 +97,13 @@ class Books extends Component {
         return (
             <div>
                 {window.location.pathname === "/" ?
+
                     <div>
                         <SearchCard
                             value={this.state.bookSearch}
                             onChange={this.handleInputChange}
                             onClick={this.handleSearch}
                         />
-
                         <SearchResult>
                             {this.state.results.length ? (
 
@@ -126,7 +126,11 @@ class Books extends Component {
                                 )}
                         </SearchResult>
                     </div>
+
+
+
                     :
+
                     <SaveCard>
                         {this.state.savedBooks.length ? (
 
