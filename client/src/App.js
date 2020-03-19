@@ -12,13 +12,16 @@ function App() {
   return (
     <Router>
       <div>
+
         <NavBar/>
         <Jumbotron />
+        
         <Switch>
           <Route exact path="/" component={Books}/>
           <Route exact path="/saved" component={Books}/>
           <Route exact path="/contact"/>
         </Switch>
+        
       </div>
     </Router>
   )
