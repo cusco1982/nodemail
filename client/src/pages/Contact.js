@@ -16,7 +16,24 @@ class Contact extends Component {
                     name='name'
                     onChange={this.handleChange}/>
                 </FormGroup>
+                
+                <FormGroup>
+                    <Label for='email'>Email:</Label>
+                    <Input
+                    type='email'
+                    name='email'
+                    onChange={this.handleChange}/>
+                </FormGroup>
 
+                <FormGroup>
+                    <Label for='message'>Message:</Label>
+                    <Input
+                    type='textarea'
+                    name='message'
+                    onChange={this.handleChange}/>
+                </FormGroup>
+
+                <Button>Submit</Button>
             </Form>
 
 
