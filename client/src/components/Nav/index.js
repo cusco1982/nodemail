@@ -9,6 +9,8 @@ function Nav() {
       </a>
       <a className="nav-link mt-2 text-info" href="/">Search</a>
       <a className="nav-link mt-2 text-info" href="/saved">Saved</a>
+      <a className="nav-link mt-2 text-info" href="/contact">Contact</a>
+
     </nav>
   );
 }
