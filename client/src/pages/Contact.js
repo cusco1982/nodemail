@@ -11,6 +11,10 @@ class Contact extends Component {
             <Form>
                 <FormGroup>
                     <Label for='name'>Name:</Label>
+                    <Input
+                    type='text'
+                    name='name'
+                    onChange={this.handleChange}/>
                 </FormGroup>
 
             </Form>
