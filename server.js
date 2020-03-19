@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/WJBest", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/WJBest", {useNewUrlParser: true});
 
 // Start the API server
 app.listen(PORT, function() {
