@@ -1,103 +1,88 @@
 import React, { Component } from "react";
-import SearchCard from "../components/SearchCard";
-import SearchResult from "../components/SearchResult";
-import BookItemCard from "../components/BookItemCard";
-import SaveCard from "../components/SaveResult";
-import API from "../utils/API";
+// import SearchCard from "../components/SearchCard";
+// import SearchResult from "../components/SearchResult";
+// import BookItemCard from "../components/BookItemCard";
+// import SaveCard from "../components/SaveResult";
+// import API from "../utils/API";
 
 
 class Books extends Component {
 
     state = {
-        results: [],
-        savedBooks: [],
-        bookSearch: ""
+        // results: [],
+        // savedBooks: [],
+        // bookSearch: ""
     };
 
-    componentDidMount (){
-        API.getSavedBooks()
-                .then(res => {
-                    this.setState({
-                        savedBooks: res.data
-                    })
-
-                })
-            
-    }
-
-
+    // componentDidMount() {
+    //     API.getSavedBooks()
+    //         .then(res => {
+    //             this.setState({
+    //                 savedBooks: res.data
+    //             })
+    //         })
+    // }
     //On Button click for searching books 
-    handleSearch = event => {
-
-        event.preventDefault();
-
-        if (this.state.bookSearch) {
-            API.searchBooks(this.state.bookSearch)
-                .then(res =>
-                    this.setState({
-                        results: res.data.items
-                    })
-                    // console.log("reesponse", res.data.items)
-                )
-                .catch(err => console.log(err));
-        }
-    }
-
-    handleInputChange = event => {
-
-        const value = event.target.value;
-
-        this.setState({
-            bookSearch: value
-        })
-    }
-
-    handleSave = event => {
-        const bookIndex = event.target.attributes.getNamedItem("data-index").value;
-        const saveBook = this.state.results[bookIndex];
-        console.log(saveBook);
-
-        const bookData = {
-            title: saveBook.volumeInfo.title,
-            link: saveBook.volumeInfo.previewLink,
-            thumbnail: saveBook.volumeInfo.imageLinks.thumbnail,
-            author: saveBook.volumeInfo.authors[0],
-            description: saveBook.volumeInfo.description,
-            key: saveBook.id
-        }
-
-        API.saveBook(bookData.key, bookData)
-            .then(API.getSavedBooks()
-                .then(res => {
-                    this.setState({
-                        savedBooks: res.data
-                    })
-                    console.log("In state", this.state.savedBooks)
-                    console.log("Length", this.state.savedBooks.length)
-                })
-            )
-    }    
-
-    handleDelete = event => {
-        const bookIndex = event.target.attributes.getNamedItem("data-index").value;
-        const deleteBook = this.state.savedBooks[bookIndex]
-        console.log(deleteBook._id)
-
-        API.deleteBook(deleteBook._id).then(
-            
-            window.location.reload()
-        )
-        
-    }
+    // handleSearch = event => {
+    //     event.preventDefault();
+    //     if (this.state.bookSearch) {
+    //         API.searchBooks(this.state.bookSearch)
+    //             .then(res =>
+    //                 this.setState({
+    //                     results: res.data.items
+    //                 })
+    //                 // console.log("reesponse", res.data.items)
+    //             )
+    //             .catch(err => console.log(err));
+    //     }
+    // }
+    // handleInputChange = event => {
+    //     const value = event.target.value;
+    //     this.setState({
+    //         bookSearch: value
+    //     })
+    // }
+    // handleSave = event => {
+    //     const bookIndex = event.target.attributes.getNamedItem("data-index").value;
+    //     const saveBook = this.state.results[bookIndex];
+    //     console.log(saveBook);
+    //     const bookData = {
+    //         title: saveBook.volumeInfo.title,
+    //         link: saveBook.volumeInfo.previewLink,
+    //         thumbnail: saveBook.volumeInfo.imageLinks.thumbnail,
+    //         author: saveBook.volumeInfo.authors[0],
+    //         description: saveBook.volumeInfo.description,
+    //         key: saveBook.id
+    //     }
+    //     API.saveBook(bookData.key, bookData)
+    //         .then(API.getSavedBooks()
+    //             .then(res => {
+    //                 this.setState({
+    //                     savedBooks: res.data
+    //                 })
+    //                 console.log("In state", this.state.savedBooks)
+    //                 console.log("Length", this.state.savedBooks.length)
+    //             })
+    //         )
+    // }
+    // handleDelete = event => {
+    //     const bookIndex = event.target.attributes.getNamedItem("data-index").value;
+    //     const deleteBook = this.state.savedBooks[bookIndex]
+    //     console.log(deleteBook._id)
+    //     API.deleteBook(deleteBook._id).then(
+    //         window.location.reload()
+    //     )
+    // }
 
 
 
 
     render() {
         return (
+
+
             <div>
                 {window.location.pathname === "/" ?
-
                     <div>
                         <SearchCard
                             value={this.state.bookSearch}
@@ -106,8 +91,7 @@ class Books extends Component {
                         />
                         <SearchResult>
                             {this.state.results.length ? (
-
-                                this.state.results.map( (book, i) => {
+                                this.state.results.map((book, i) => {
                                     return (
                                         <BookItemCard
                                             key={book.id}
@@ -126,11 +110,7 @@ class Books extends Component {
                                 )}
                         </SearchResult>
                     </div>
-
-
-
                     :
-
                     <SaveCard>
                         {this.state.savedBooks.length ? (
 
@@ -153,8 +133,8 @@ class Books extends Component {
                             )}
                     </SaveCard>
                 }
-
             </div>
+
         )
     }
 
