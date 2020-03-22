@@ -61,12 +61,16 @@ class Contact extends Component {
 
             <form onSubmit={this.handleSubmit}>
             <div className="loginput">
-              <label for="email">Your Email Address</label>
+              <label for="name">Name:</label>
+              <input className="form-control" required type="name" id="name" name="name" onChange={this.handleChange} />
+            </div>
+            <div className="email">
+              <label for="email">Email:</label>
               <input className="form-control" required type="email" id="email" name="email" onChange={this.handleChange} />
             </div>
-            <div className="loginput">
-              <label for="password">Password</label>
-              <input className="form-control" required type="password" id="password" name="password" onChange={this.handleChange} />
+            <div className="message">
+              <label for="message">Message:</label>
+              <input className="form-control" required type="message" id="message" name="message" onChange={this.handleChange} />
             </div>
             <br />
             <div>
