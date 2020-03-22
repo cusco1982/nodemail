@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Form, FormGroup, Input, Label, Button } from 'reactstrap'
-
+import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
+import axios from 'axios';
 
 
 class Contact extends Component {
@@ -12,13 +12,17 @@ class Contact extends Component {
         message: ''
     };
 
-    handleSubmit = event => {
-        event.preventDefault();
+    async handleSubmit(e) {
+        e.preventDefault();
 
-        const { name, email, password } = this.state;
+        const {name, email, message} = this.state;
+        // console.log(this.state);
+        const form = await axios.post('/api/form', {
+            name,
+            email,
+            message
+        })
 
-        console.log(this.state);
-        
     }
 
 
