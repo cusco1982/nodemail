@@ -6,85 +6,81 @@ import { Form, FormGroup, Input, Label, Button } from 'reactstrap'
 class Contact extends Component {
 
 
-    constructor() {
-        super()
-
-        this.state={
-            name:'',
-            email:'',
-            message:''
-        }
+    state = {
+        name: '',
+        email: '',
+        message: ''
 
         // this.handleChange = this.handleChange.bind(this)
-    }
+    };
 
     // handleChange = e => {
     //     this.setState({ [e.target.name]: e.target.value })
     // }
     handleSubmit = event => {
         event.preventDefault();
-    
+
         const { email, password } = this.state;
         // axios({
         //   url: "/authentication/signin",
         //   method: 'POST',
         //   data: {
-            // email,
-            // password
+        // email,
+        // password
         //   }
         // })
         //   .then(response => {
-            // console.log(response);
-            // const { email } = response.data;
-            // sessionStorage.setItem("user", JSON.stringify({ email }));
-            // if (email === "manager@gmail.com") {
-            //   this.props.history.push('/admin')
-            // } else {
-            //   this.props.history.push('/tenant')
-            // }
+        // console.log(response);
+        // const { email } = response.data;
+        // sessionStorage.setItem("user", JSON.stringify({ email }));
+        // if (email === "manager@gmail.com") {
+        //   this.props.history.push('/admin')
+        // } else {
+        //   this.props.history.push('/tenant')
+        // }
         //   })
         //   .catch((error) => {
-            // console.log(error)
+        // console.log(error)
         //   }
         //   );
-      }
+    }
 
 
     handleChange = event => {
         const { name, value } = event.target;
         this.setState({
-          [name]: value
+            [name]: value
         });
-      };
+    };
 
 
     render() {
         return (
 
 
-            <Form onSubmit={this.handleSubmit} style={{width:'600px'}}>
+            <Form onSubmit={this.handleSubmit} style={{ width: '600px' }}>
                 <FormGroup>
                     <Label for='name'>Name:</Label>
                     <Input
-                    type='text'
-                    name='name'
-                    onChange={this.handleChange}/>
+                        type='text'
+                        name='name'
+                        onChange={this.handleChange} />
                 </FormGroup>
-                
+
                 <FormGroup>
                     <Label for='email'>Email:</Label>
                     <Input
-                    type='email'
-                    name='email'
-                    onChange={this.handleChange}/>
+                        type='email'
+                        name='email'
+                        onChange={this.handleChange} />
                 </FormGroup>
 
                 <FormGroup>
                     <Label for='message'>Message:</Label>
                     <Input
-                    type='textarea'
-                    name='message'
-                    onChange={this.handleChange}/>
+                        type='textarea'
+                        name='message'
+                        onChange={this.handleChange} />
                 </FormGroup>
 
                 <Button type="submit">Submit</Button>
