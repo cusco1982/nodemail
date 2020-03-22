@@ -5,23 +5,27 @@ import axios from 'axios';
 
 class Contact extends Component {
 
+constructor() {
+  super()
 
-    state = {
-        name: '',
-        email: '',
-        message: ''
-    };
+  this.state = {
+      name: '',
+      email: '',
+      message: ''
+  };
+  
+}
 
-    async handleSubmit(e) {
-        e.preventDefault();
+  handleSubmit = event => {
+        event.preventDefault();
 
-        const {name, email, message} = this.state;
-        // console.log(this.state);
-        const form = await axios.post('/api/form', {
-            name,
-            email,
-            message
-        })
+        const {name, email, message} = state;
+        console.log(state);
+        // const form = await axios.post('/api/form', {
+            // name,
+            // email,
+        //     message
+        // })
 
     }
 

@@ -16,6 +16,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// app.post('api/form', (req,res) => {
+//   console.log(req.body)
+// });
+
 // app.use(routes);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/WJBest", {useNewUrlParser: true}).then(() => {
