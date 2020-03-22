@@ -20,7 +20,9 @@ class Contact extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        const { email, password } = this.state;
+        const { name, email, password } = this.state;
+
+        console.log(this.state);
         
         // axios({
         //   url: "/authentication/signin",
