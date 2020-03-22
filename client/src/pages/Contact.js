@@ -21,6 +21,7 @@ class Contact extends Component {
         event.preventDefault();
 
         const { email, password } = this.state;
+        
         // axios({
         //   url: "/authentication/signin",
         //   method: 'POST',
@@ -58,33 +59,23 @@ class Contact extends Component {
         return (
 
 
-            <Form onSubmit={this.handleSubmit} style={{ width: '600px' }}>
-                <FormGroup>
-                    <Label for='name'>Name:</Label>
-                    <Input
-                        type='text'
-                        name='name'
-                        onChange={this.handleChange} />
-                </FormGroup>
-
-                <FormGroup>
-                    <Label for='email'>Email:</Label>
-                    <Input
-                        type='email'
-                        name='email'
-                        onChange={this.handleChange} />
-                </FormGroup>
-
-                <FormGroup>
-                    <Label for='message'>Message:</Label>
-                    <Input
-                        type='textarea'
-                        name='message'
-                        onChange={this.handleChange} />
-                </FormGroup>
-
-                <Button type="submit">Submit</Button>
-            </Form>
+            <form onSubmit={this.handleSubmit}>
+            <div className="loginput">
+              <label for="email">Your Email Address</label>
+              <input className="form-control" required type="email" id="email" name="email" onChange={this.handleChange} />
+            </div>
+            <div className="loginput">
+              <label for="password">Password</label>
+              <input className="form-control" required type="password" id="password" name="password" onChange={this.handleChange} />
+            </div>
+            <br />
+            <div>
+              <button className="btn btn-primary btn-lg btn-block" style={{ marginBottom: "10px", opacity: "70%" }} type="submit">Login Now</button>
+              {/* <p class="lead mt-4">
+      No Account? <a href="/register">Register</a>
+    </p> */}
+            </div>
+          </form>
 
 
 
