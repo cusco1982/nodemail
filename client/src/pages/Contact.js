@@ -34,19 +34,19 @@ class Contact extends Component {
         return (
 
 
-            <form onSubmit={this.handleSubmit} style={{width:"600px"}}>
+            <Form onSubmit={this.handleSubmit} style={{width:"600px"}}>
 
             <div>
               <label for="name">Name:</label>
-              <input type="name" name="name" onChange={this.handleChange} />
+              <Input type="name" name="name" onChange={this.handleChange} />
             </div>
             <div>
               <label for="email">Email:</label>
-              <input type="email" name="email" onChange={this.handleChange} />
+              <Input type="email" name="email" onChange={this.handleChange} />
             </div>
             <div>
               <label for="message">Message:</label>
-              <input type="textarea" name="message" onChange={this.handleChange} />
+              <Input type="textarea" name="message" onChange={this.handleChange} />
             </div>
 
             <br />
@@ -55,7 +55,7 @@ class Contact extends Component {
               <button style={{ marginBottom: "10px", opacity: "70%" }} type="submit">Submit</button>
             </div>
 
-          </form>
+          </Form>
 
 
         );
