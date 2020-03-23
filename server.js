@@ -42,9 +42,9 @@ app.post('/api/form', (req,res) => {
     })
 
     let mailOptions = {
-      from:'test@testaccount.com',
+      from:'wjbest@WJBestInsulation.com',
       to:'danyka.mosciski@ethereal.email',
-      replyTo:'test@testaccount.com',
+      replyTo:'wjbestweb@gmail.com',
       subject:'New Message',
       text: req.body.message,
       html: htmlEmail
